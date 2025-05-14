@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>AR Civilizations 7° GMO</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  background: linear-gradient(to right, #b0aead, #d3d0cd, #a6a4a1);
+  color: #1a1a1a;
+  text-align: center;
+}
+
+    h1 {
+      font-size: 2em;
+      margin: 20px;
+      color: #3c2f1c;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    .contenedor-img {
+      position: relative;
+      display: inline-block;
+    }
+
+    .galeria img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+  border: 3px solid #6e6e6e; /* gris plomo */
+  box-shadow: 0 4px 12px rgba(60, 60, 60, 0.4); /* sombra difusa gris oscuro */
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(60, 60, 60, 0.6);
+}
+
+    .tooltip {
+      visibility: hidden;
+      background-color: rgba(0,0,0,0.8);
+      color: #fff;
+      text-align: center;
+      padding: 5px 10px;
+      border-radius: 6px;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      white-space: nowrap;
+      font-size: 0.9em;
+      transition: visibility 0.2s ease, opacity 0.2s ease;
+      opacity: 0;
+    }
+
+    .contenedor-img:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    model-viewer {
+  width: 600px;
+  height: 500px;
+  margin: 30px auto;
+  display: none;
+  background: linear-gradient(to bottom right, #d3d3d3, #a8a8a8); /* tonos plomo suaves */
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(80, 80, 80, 0.5); /* sombra gris difusa */
+  border: 2px solid #999;
+}
+
+    .visor-activo {
+      display: block;
+    }
+
+    .controles {
+      margin: 15px;
+    }
+
+.controles button {
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #ccc; /* gris claro */
+  border: 1px solid #888; /* contorno gris oscuro */
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333; /* texto gris oscuro */
+  box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.3); /* sombra tenue */
+  transition: background-color 0.3s ease;
+}
+
+.controles button:hover {
+  background-color: #b0b0b0; /* gris medio al pasar el mouse */
+}  </style>
+</head>
+<body>
+
+  <h1>AR Civilizations 7° G.M.O</h1> <img src="img/11.png" alt="escudo" height="150px" widht="180px">
+
+  <div class="galeria">
+    <div class="contenedor-img">
+      <img src="img/1.jpg" alt="Chitchen Itzá" onclick="cambiarModelo('modelos/1.glb', 'audios/1.mp3')" title="Chitchen Itzá">
+      <span class="tooltip">Chitchen Itzá</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/2.jpg" alt="Esfinge" onclick="cambiarModelo('modelos/2.glb', 'audios/2.mp3')" title="Esfinge">
+      <span class="tooltip">Esfinge</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/3.png" alt="Partenón" onclick="cambiarModelo('modelos/3.glb', 'audios/3.mp3')" title="Partenón">
+      <span class="tooltip">Partenón</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/4.jpg" alt="Abu Simbel" onclick="cambiarModelo('modelos/4.glb', 'audios/4.mp3')" title="Abu Simbel">
+      <span class="tooltip">Abu Simbel</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/5.jpg" alt="Hut Mongol" onclick="cambiarModelo('modelos/5.glb', 'audios/5.mp3')" title="Hut Mongol">
+      <span class="tooltip">Hut Mongol</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/6.jpg" alt="Ziggurat" onclick="cambiarModelo('modelos/6.glb', 'audios/6.mp3')" title="Ziggurat">
+      <span class="tooltip">Ziggurat</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/img7.jpg" alt="Modelo 7" onclick="cambiarModelo('modelos/modelo7.glb', 'audios/modelo7.mp3')" title="Modelo 7">
+      <span class="tooltip">Modelo 7</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/img8.jpg" alt="Modelo 8" onclick="cambiarModelo('modelos/modelo8.glb', 'audios/modelo8.mp3')" title="Modelo 8">
+      <span class="tooltip">Modelo 8</span>
+    </div>
+    <div class="contenedor-img">
+      <img src="img/img9.jpg" alt="Modelo 9" onclick="cambiarModelo('modelos/modelo9.glb', 'audios/modelo9.mp3')" title="Modelo 9">
+      <span class="tooltip">Modelo 9</span>
+    </div>
+  </div>
+
+  <!-- Visualizador 3D -->
+  <model-viewer id="visor3d" auto-rotate camera-controls ar shadow-intensity="1"></model-viewer>
+
+  <!-- Audio -->
+  <audio id="audio3d" controls style="margin-top: 10px;"></audio>
+
+  <script>
+    const visor = document.getElementById('visor3d');
+    const audio = document.getElementById('audio3d');
+
+    function cambiarModelo(rutaModelo, rutaAudio) {
+      visor.setAttribute('src', rutaModelo);
+      visor.classList.add('visor-activo');
+
+      audio.src = rutaAudio;
+      audio.play();
+
+      visor.cameraOrbit = "0deg 75deg 2.5m";
+
+      window.scrollTo({ top: visor.offsetTop - 100, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
